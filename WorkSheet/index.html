@@ -1,0 +1,133 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Javaプログラミング</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="WorkSheet"
+                  title="Javaプログラミング"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="授業の復習-課題1" duration="0">
+        <h2 is-upgraded>課題1</h2>
+<p>以下の仕様をもとにコードを書いてみよう。</p>
+<p>2つの32ビット整数を入力し、足し算を行いなさい。 足し算を行うクラスを用意し、コンストラクタで初期化しなさい。 Mainクラスで2つの値を入力し、足し算クラスに渡して、戻り値で、結果を取得し表示しなさい。</p>
+<p>以下はこの問題を解くにあたっての解説です。</p>
+<p>値を入れるための箱＝2つの32ビット整数</p>
+<p>これは、変数を用意するということです。 Javaでは、フィールド変数といいます。 つまり、32ビット整数型のフィールド変数を2つ用意します。</p>
+<p>足し算をするクラスをCalcAddクラスとします。 その中に32ビット整数型のフィールド変数を2つ用意するとこのようになります。</p>
+<pre><code language="language-CalcAdd.java" class="language-CalcAdd.java">public class CalcAdd {
+    private int a;
+    private int b;    
+}
+</code></pre>
+<p>コンストラクタで初期化しなさい。</p>
+<p>コンストラクタで初期化するということは、以下のようなコードになります。</p>
+<pre><code>public class CalcAdd {
+    private int a;
+    private int b;
+
+    public CalcAdd(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+}
+</code></pre>
+<p>Mainクラスで2つの値を入力</p>
+<p>入力するために、Scannerをインスタンス化すること。入力された値を保持するための変数を用意することを行わなければいけません。 コードでは以下のようになります。</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println(&#34;足し算したい値を入力してください。&#34;);
+        System.out.print(&#34;1つ目：&#34;);
+        int a = input.nextInt();
+        System.out.print(&#34;2つ目：&#34;);
+        int b = input.nextInt();
+    }
+}
+</code></pre>
+<p>CalcAddの足し算をするメソッド</p>
+<pre><code>public class CalcAdd {
+    private int a;
+    private int b;
+    public CalcAdd(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    public int add(){
+        return a+b;
+    }
+}
+</code></pre>
+<p>CalacAddクラスに渡して、戻り値で、結果を取得し表示しなさい。</p>
+<p>Mainクラスで、CalcAddクラスをインスタンス化し、入力した値を渡します。 そして、CalcAddクラスの足し算メソッドを呼び出します。戻り値で結果が帰ってくるので、その値を入れる変数を用意します。 最後に、その値を表示します。</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println(&#34;足し算したい値を入力してください。&#34;);
+        System.out.print(&#34;1つ目：&#34;);
+        int a = input.nextInt();
+        System.out.print(&#34;2つ目：&#34;);
+        int b = input.nextInt();
+        CalcAdd calcadd = new CalcAdd(a,b);
+        int sum = CalcAdd.add();
+        System.out.println(&#34;合計は&#34; + sum + &#34;です。&#34;);
+    }
+}
+</code></pre>
+<p>以上で、おしまいです。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="授業の復習-課題2" duration="0">
+        <h2 is-upgraded>課題2</h2>
+<p>課題1を参考に、以下の仕様通りにプログラムを作成しなさい。</p>
+<p>2つの32ビット整数を入力し、掛け算を行いなさい。 掛け算を行うクラスを用意し、コンストラクタで初期化しなさい。 Mainクラスで2つの値を入力し、掛け算クラスに渡して、戻り値で、結果を取得し表示しなさい。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="授業の復習-課題3" duration="0">
+        <h2 is-upgraded>課題3</h2>
+<p class="image-container"><img alt="BMIのクラス図" src="img\\3607af050f65f433.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="授業の復習-課題4" duration="0">
+        <h2 is-upgraded>課題4</h2>
+<p class="image-container"><img alt="Squareのクラス図" src="img\\5523beabacd6a57b.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

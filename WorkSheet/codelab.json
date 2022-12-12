@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-12-13T00:48:26+09:00",
+  "id": "WorkSheet",
+  "duration": 0,
+  "title": "Javaプログラミング",
+  "summary": "WorkSheet",
+  "source": "WorkSheet.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "WorkSheet"
+}
