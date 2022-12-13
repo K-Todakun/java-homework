@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Javaプログラミング</title>
+  <title>ベーシッククラスレベル向け）Javaプログラミング補習教材</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public-tmp/codelab-elements.css">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
   <style>
     .success {
       color: #1e8e3e;
@@ -23,36 +23,173 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="WorkSheet"
-                  title="Javaプログラミング"
+                  title="ベーシッククラスレベル向け）Javaプログラミング補習教材"
                   environment="web"
-                  feedback-link="">
+                  feedback-link="mailto:java-prog-qa@techitose.org">
     
-      <google-codelab-step label="授業の復習-課題1" duration="0">
-        <h2 is-upgraded>課題1</h2>
-<p>以下の仕様をもとにコードを書いてみよう。</p>
-<p>2つの32ビット整数を入力し、足し算を行いなさい。 足し算を行うクラスを用意し、コンストラクタで初期化しなさい。 Mainクラスで2つの値を入力し、足し算クラスに渡して、戻り値で、結果を取得し表示しなさい。</p>
-<p>以下はこの問題を解くにあたっての解説です。</p>
-<p>値を入れるための箱＝2つの32ビット整数</p>
-<p>これは、変数を用意するということです。 Javaでは、フィールド変数といいます。 つまり、32ビット整数型のフィールド変数を2つ用意します。</p>
-<p>足し算をするクラスをCalcAddクラスとします。 その中に32ビット整数型のフィールド変数を2つ用意するとこのようになります。</p>
-<pre><code language="language-CalcAdd.java" class="language-CalcAdd.java">public class CalcAdd {
-    private int a;
-    private int b;    
+      <google-codelab-step label="この教材の目的" duration="0">
+        <p>Javaプログラミングでは、<strong>クラスの構造を理解した上で、自分でクラスを作れること</strong> がとても重要になります。</p>
+<p>指示どおりにクラスを作る練習をした上で、実際に自分でクラスを作ることができるか、問いで確認しましょう。</p>
+<h2 is-upgraded>練習問題</h2>
+<aside class="special"><p>足し算を行うクラスを作成しなさい。</p>
+<p>足し算クラスは、2つの32ビット整数をデータとして持つ。また、このデータを使って足し算の結果を答える機能を持つ。</p>
+<p>足し算クラスのデータは、インスタンス化時に初期化する。</p>
+<p>最後に、Mainクラスで、標準入力から2つの数値を入力し、足し算クラスで計算が実行されるようにしなさい。</p>
+</aside>
+<p>次ページからは、この問題文を解くにあたっての解説です。まずは、<strong>問題文と解説を照らし合わせ、どのように記述すれば良いか確認した上で、あなたも同じように書いてみましょう</strong> 。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="練習：クラスを作成する" duration="0">
+        <aside class="special"><p><strong>足し算を行うクラスを作成しなさい。</strong></p>
+<p>足し算クラスは、2つの32ビット整数をデータとして持つ。また、このデータを使って足し算の結果を答える機能を持つ。</p>
+<p>足し算クラスのデータは、インスタンス化時に初期化する。</p>
+<p>最後に、Mainクラスで、標準入力から2つの数値を入力し、足し算クラスで計算が実行されるようにしなさい。</p>
+</aside>
+<p>問題文では <code>足し算を行うクラスを作成しなさい</code> と指示されています。</p>
+<p><strong>クラスを作成する</strong> ことは、<code>.java</code> ファイルの中に、<code>class</code> <strong>というキーワードを使い、ブロック </strong><code>{  }</code> を記述することから始まります。</p>
+<p><strong>Tashizan.java というファイルを新規作成し</strong>、Tashizan クラスを作り始めましょう。</p>
+<pre><code language="language-java" class="language-java">public class Tashizan {
+
+    // ここに、クラスの内容を書きます。
+
 }
+
 </code></pre>
-<p>コンストラクタで初期化しなさい。</p>
-<p>コンストラクタで初期化するということは、以下のようなコードになります。</p>
-<pre><code>public class CalcAdd {
+<p>これにより、足し算を行うための <code>Tashizan</code> クラスの土台ができました。</p>
+<aside class="warning"><p>classの前に <code>public</code> とついています。</p>
+<p>これは、<strong>Tashizan クラス自体を外部から使えるようにするための設定キーワード（アクセス修飾子）</strong> です。</p>
+<p>詳しくは、教科書を読み直してみましょう。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="練習：クラスにデータを持たせる" duration="0">
+        <aside class="special"><p>足し算を行うクラスを作成しなさい。</p>
+<p><strong>足し算クラスは、2つの32ビット整数をデータとして持つ。</strong> また、このデータを使って足し算の結果を答える機能を持つ。</p>
+<p>足し算クラスのデータは、インスタンス化時に初期化する。</p>
+<p>最後に、Mainクラスで、標準入力から2つの数値を入力し、足し算クラスで計算が実行されるようにしなさい。</p>
+</aside>
+<p>次に、問題文では <code>足し算クラスは、2つの32ビット整数をデータとして持つ</code> と指示されています。</p>
+<p><strong>クラスにデータを持たせる</strong> とは、クラスの内容に <strong>フィールド変数</strong> を記述することです。</p>
+<p><strong>フィールド変数は、クラスのブロックに直接、変数のように記述</strong>します。</p>
+<p>Tashizan クラスに、32ビット整数を表す <code>int</code> 型を使ったフィールド変数を <strong>まずは1つ、記述</strong>しましょう。</p>
+<pre><code language="language-java" class="language-java">public class Tashizan {
+
+    private int a;
+
+}
+
+</code></pre>
+<p><code>a</code> という <code>int</code> 型のフィールド変数を記述しました。</p>
+<p>今回の問題文では、<code>足し算クラスは、2つの32ビット整数をデータとして持つ</code> と指示されているので、もう1つフィールド変数が必要です。記述しましょう。</p>
+<pre><code language="language-java" class="language-java">public class Tashizan {
+    
     private int a;
     private int b;
 
-    public CalcAdd(int a, int b) {
+}
+
+</code></pre>
+<p><code>b</code> という <code>int</code> 型のフィールド変数を記述しました。</p>
+<p><code>a</code>, <code>b</code> という2つの <code>int</code> 型のフィールド変数が記述されることで、 <code>足し算クラスは、2つの32ビット整数をデータとして持つ</code> ことができるようになりました。</p>
+<aside class="warning"><p>フィールド変数の前に <code>private</code> とついています。</p>
+<p>これは、<strong>フィールド変数 a, b を、クラスの内部からのみ使えるようにするための設定キーワード（アクセス修飾子）</strong> です。</p>
+<p>詳しくは、教科書を読み直してみましょう。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="練習：クラスに機能を持たせる" duration="0">
+        <aside class="special"><p>足し算を行うクラスを作成しなさい。</p>
+<p>足し算クラスは、2つの32ビット整数をデータとして持つ。また、<strong>このデータを使って足し算の結果を答える機能を持つ。</strong></p>
+<p>足し算クラスのデータは、インスタンス化時に初期化する。</p>
+<p>最後に、Mainクラスで、標準入力から2つの数値を入力し、足し算クラスで計算が実行されるようにしなさい。</p>
+</aside>
+<p>次に、問題文では <code>このデータを使って足し算の結果を答える機能を持つ</code> と指示されています。</p>
+<p>データとは、前の練習のパートで作成した <code>a</code>, <code>b</code> のフィールド変数のことです。</p>
+<p><strong>クラスに機能を持たせる</strong> とは、クラスの内容に <strong>メソッド</strong> を記述することです。</p>
+<p><strong>メソッドは、クラスのブロックの中に処理ブロック </strong><code>{  }</code> <strong>として記述</strong>します。</p>
+<p>Tashizan クラスに、<strong>データを使って足し算をする </strong><code>tasu()</code> <strong>メソッド</strong>を作成しましょう。</p>
+<pre><code language="language-java" class="language-java">public class Tashizan {
+    
+    private int a;
+    private int b;
+
+　　public void tasu() {
+        int ans = a + b;
+    }
+
+}
+</code></pre>
+<p><code>tasu()</code> というメソッドを作成し、その中で <code>a</code>, <code>b</code> の足し算の結果を <code>ans</code> に格納するメソッドを作成しました。</p>
+<p><code>void</code> とは、戻り値を返さないメソッドであることを表すキーワードです。しかし、問題文では <code>足し算の結果を答える</code> と指示されています。</p>
+<p>結果を答えるためには、<strong>メソッドに戻り値の型を指定</strong> した上で、 <strong>処理結果を </strong><code>return</code> <strong>する</strong> ように記述します。</p>
+<pre><code language="language-java" class="language-java">public class Tashizan {
+    
+    private int a;
+    private int b;
+
+　　public int tasu() {
+        int ans = a + b;
+        return ans;
+    }
+
+}
+</code></pre>
+<p><code>void</code> を戻り値となる計算結果 <code>ans</code> の型である <code>int</code> に変換し、また計算結果自体を <code>return</code> するように記述を書き換えました。</p>
+<aside class="warning"><p>メソッドの <code>()</code> には、引数を指定することもできます。</p>
+<p>たとえば、<strong>フィールド変数と、クラスの外の別のデータを組み合わせた処理</strong> が必要な場合に使います。</p>
+<p>詳しくは、教科書を読み直してみましょう。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="練習：インスタンス化時に初期化する" duration="0">
+        <aside class="special"><p>足し算を行うクラスを作成しなさい。</p>
+<p>足し算クラスは、2つの32ビット整数をデータとして持つ。また、このデータを使って足し算の結果を答える機能を持つ。</p>
+<p><strong>足し算クラスのデータは、インスタンス化時に初期化する。</strong></p>
+<p>最後に、Mainクラスで、標準入力から2つの数値を入力し、足し算クラスで計算が実行されるようにしなさい。</p>
+</aside>
+<p>次に、問題文では <code>足し算クラスのデータは、インスタンス化時に初期化する</code> と指示されています。</p>
+<p>足し算クラスのデータとは、フィールド変数のことでしたね。</p>
+<p><strong>インスタンス化は、クラスをプログラム上で使える（メモリを確保する）</strong> ための処理で、この時に<strong>コンストラクタという特別なメソッドを実行</strong>できます。</p>
+<p>つまり  <strong>データを、インスタンス化時に初期化する</strong> とは、<strong>コンストラクタでフィールド変数を設定する</strong> ように記述します。</p>
+<p>また、<strong>コンストラクタは、フィールド変数やメソッドの間に、クラス名と同じ名前</strong> で記述します。</p>
+<pre><code language="language-java" class="language-java">public class Tashizan {
+    
+    private int a;
+    private int b;
+
+    public Tashizan(int a, int b) {
         this.a = a;
         this.b = b;
     }
+
+　　public int tasu() {
+        int ans = a + b;
+        return ans;
+    }
+
 }
 </code></pre>
-<p>Mainクラスで2つの値を入力</p>
+<p><code>Tashizan(int a, int b)</code> コンストラクタを作成しました。</p>
+<p>このコンストラクタは、引数の <code>a</code>, <code>b</code> の値を使って、Tashizanクラスのフィールド変数 <code>a</code>, <code>b</code> を設定します。</p>
+<aside class="warning"><p>コンストラクタの中に <code>this.a</code> というものがあります。</p>
+<p>メソッドやコンストラクタの中で、引数とフィールド変数の名前が同じになる場合、<code>this</code> は <code>このクラスのフィールド変数</code> であるということを表します。</p>
+<p>たとえば、 <code>this.a = a</code> は「<code>フィールド変数a</code> を、<code>引数 a</code> の中身と同じものにする」という意味になります。</p>
+<p>メソッドやコンストラクタの中で、どの変数がフィールド変数で、どの変数が引数か分かりづらい時には、フィールド変数の方に <code>this</code> をつけるようにしましょう。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="練習：mainメソッドからクラスを使う" duration="0">
+        <p>Mainクラスで2つの値を入力</p>
 <p>入力するために、Scannerをインスタンス化すること。入力された値を保持するための変数を用意することを行わなければいけません。 コードでは以下のようになります。</p>
 <pre><code>public class Main {
     public static void main(String[] args) {
@@ -99,34 +236,31 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="授業の復習-課題2" duration="0">
-        <h2 is-upgraded>課題2</h2>
-<p>課題1を参考に、以下の仕様通りにプログラムを作成しなさい。</p>
+      <google-codelab-step label="問1" duration="0">
+        <p>練習を参考に、以下の仕様通りにプログラムを作成しなさい。</p>
 <p>2つの32ビット整数を入力し、掛け算を行いなさい。 掛け算を行うクラスを用意し、コンストラクタで初期化しなさい。 Mainクラスで2つの値を入力し、掛け算クラスに渡して、戻り値で、結果を取得し表示しなさい。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="授業の復習-課題3" duration="0">
-        <h2 is-upgraded>課題3</h2>
-<p class="image-container"><img alt="BMIのクラス図" src="img\\3607af050f65f433.png"></p>
+      <google-codelab-step label="問2" duration="0">
+        <p class="image-container"><img alt="BMIのクラス図" src="img/3607af050f65f433.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="授業の復習-課題4" duration="0">
-        <h2 is-upgraded>課題4</h2>
-<p class="image-container"><img alt="Squareのクラス図" src="img\\5523beabacd6a57b.png"></p>
+      <google-codelab-step label="問3" duration="0">
+        <p class="image-container"><img alt="Squareのクラス図" src="img/5523beabacd6a57b.png"></p>
 
 
       </google-codelab-step>
     
   </google-codelab>
 
-  <script src="https://storage.googleapis.com/claat-public-tmp/native-shim.js"></script>
-  <script src="https://storage.googleapis.com/claat-public-tmp/custom-elements.min.js"></script>
-  <script src="https://storage.googleapis.com/claat-public-tmp/prettify.js"></script>
-  <script src="https://storage.googleapis.com/claat-public-tmp/codelab-elements.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
 
 </body>
