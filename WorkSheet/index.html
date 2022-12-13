@@ -218,7 +218,7 @@
 </code></pre>
 <p><code>tashizan0</code> 変数が、<strong>インスタンス化した（使えるようにメモリを確保した）あるTashizanクラスのインスタンス</strong> を参照できるようになりました。</p>
 <p>コンストラクタに <code>a=2</code>, <code>b=3</code> となるように 引数を渡しているので、コンストラクタの処理が実行されることで <strong>Tashizanインスタンスのフィールド変数 </strong><code>a</code>, <code>b</code> <strong>もそれぞれ </strong><code>2</code> , <code>3</code> <strong>になっています</strong>。</p>
-<p class="image-container"><img alt="fig01" src="img/3b6e134198eea1ba.png"></p>
+<p class="image-container"><img alt="fig01" src="img\\3b6e134198eea1ba.png"></p>
 <h2 is-upgraded>Tashizanインスタンスの計算テスト</h2>
 <p>tashizan0 変数から参照された Tashizanインスタンスに、足し算を行わせましょう。</p>
 <pre><code language="language-java" class="language-java">public class Hosyu {
@@ -236,7 +236,7 @@
 <p>プログラムを実行し、実行した結果が標準出力に表示されることを確認しましょう。</p>
 <pre><code>5
 </code></pre>
-<p class="image-container"><img alt="fig02" src="img/cc7ad753430758a4.png"></p>
+<p class="image-container"><img alt="fig02" src="img\\cc7ad753430758a4.png"></p>
 <h2 is-upgraded>キーボードから入力できるようにする</h2>
 <p>ここまでの内容を踏まえて、標準入力（キーボード）から数値を入力し計算できるようにしましょう。</p>
 <p>Hosyu0クラスを、下のように書き直して、実行してみてください。</p>
@@ -271,20 +271,70 @@ public class Hosyu {
       </google-codelab-step>
     
       <google-codelab-step label="問1" duration="0">
-        <p>練習を参考に、以下の仕様通りにプログラムを作成しなさい。</p>
-<p>2つの32ビット整数を入力し、掛け算を行いなさい。 掛け算を行うクラスを用意し、コンストラクタで初期化しなさい。 Mainクラスで2つの値を入力し、掛け算クラスに渡して、戻り値で、結果を取得し表示しなさい。</p>
+        <aside class="special"><p>掛け算を行うクラスを作成しなさい。</p>
+<p>掛け算クラスは、2つの32ビット整数をデータとして持つ。また、このデータを使って掛け算の結果を答える機能を持つ。</p>
+<p>掛け算クラスのデータは、インスタンス化時に初期化する。</p>
+<p>最後に、Mainクラスで、標準入力から2つの数値を入力し、掛け算クラスで計算が実行されるようにしなさい。</p>
+</aside>
+<p>指示通りにプログラムを作成し、下記の実行結果になることを確認しなさい。</p>
+<pre><code>掛け算したい値を入力してください。
+1つ目：2
+2つ目：3
+掛け算の結果は6です。
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="問1解答" duration="0">
+        <p>問1の解答です。 自身のプログラムと比較してみてください。</p>
+<pre><code language="language-java" class="language-java">import java.util.Scanner;
+
+public class Hosyu {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println(&#34;掛け算したい値を入力してください。&#34;);
+        System.out.print(&#34;1つ目：&#34;);
+        int a = input.nextInt();
+        System.out.print(&#34;2つ目：&#34;);
+        int b = input.nextInt();
+
+        Kakezan kakezan = new Kakezan(a,b);
+        int sum = kakezan.kakeru();
+        System.out.println(&#34;掛け算の結果は&#34; + sum + &#34;です。&#34;);
+
+    }
+}
+</code></pre>
+<pre><code language="language-java" class="language-java">public class Kakezan {
+
+    private int a;
+    private int b;
+
+    public Kakezan(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    public int kakeru() {
+        int ans = a * b;
+        return ans;
+    }
+}
+</code></pre>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="問2" duration="0">
-        <p class="image-container"><img alt="BMIのクラス図" src="img/3607af050f65f433.png"></p>
+        <p class="image-container"><img alt="BMIのクラス図" src="img\\3607af050f65f433.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="問3" duration="0">
-        <p class="image-container"><img alt="Squareのクラス図" src="img/2572d2aee2488a12.png"></p>
+        <p class="image-container"><img alt="Squareのクラス図" src="img\\2572d2aee2488a12.png"></p>
 
 
       </google-codelab-step>
