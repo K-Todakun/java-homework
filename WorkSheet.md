@@ -272,65 +272,120 @@ public class Tashizan {
 
 ## 練習：mainメソッドからクラスを使う
 
+Hosyu0クラスを作成し、プログラムを実行するための main メソッドを用意します。
 
 
-> Mainクラスで2つの値を入力
+### mainメソッドの準備
 
-入力するために、Scannerをインスタンス化すること。入力された値を保持するための変数を用意することを行わなければいけません。
-コードでは以下のようになります。
+```java
+public class Hosyu {
+
+  public static void main(String[] args) {
+    // 実行するプログラムの内容
+  }
+  
+}
+```
+
+<aside class="negative">
+
+#### 復習
+
+`public static void main(String[] arg)` メソッドは、Javaがプログラムをスタートできるメソッドです。
+
+</aside>
+
+### Tashizanクラスのインスタンス化のテスト
+
+クラスをプログラム上で使うには、クラスを使えるようにメモリを確保する **インスタンス化** が必要でした。
+
+インスタンス化のためには、 `new` キーワードとコンストラクタを使います。
+
+コンストラクタの引数 `a` を `2`, `b` を `3` として、インスタンス化をしてみます。
+
+```java
+public class Hosyu {
+
+  public static void main(String[] args) {
+
+    Tashizan tashizan0 = new Tashizan(2, 3);
+
+  }
+
+}
+```
+
+`tashizan0` 変数が、**インスタンス化した（使えるようにメモリを確保した）あるTashizanクラスのインスタンス** を参照できるようになりました。
+
+コンストラクタに `a=2`, `b=3` となるように 引数を渡しているので、コンストラクタの処理が実行されることで **Tashizanインスタンスのフィールド変数** `a`, `b` **もそれぞれ** `2` , `3` **になっています**。
+
+![fig01](./fig01.png)
+
+
+### Tashizanインスタンスの計算テスト
+
+tashizan0 変数から参照された Tashizanインスタンスに、足し算を行わせましょう。
+
+
+```java
+public class Hosyu {
+
+  public static void main(String[] args) {
+
+    Tashizan tashizan0 = new Tashizan(2, 3);
+    int ans0 = tashizan0.tasu();
+    System.out.println(ans0);
+
+  }
+
+}
+```
+
+プログラムを実行し、実行した結果が標準出力に表示されることを確認しましょう。
 
 ```
-public class Main {
+5
+```
+
+![fig02](./fig02.png)
+
+
+### キーボードから入力できるようにする
+
+ここまでの内容を踏まえて、標準入力（キーボード）から数値を入力し計算できるようにしましょう。
+
+Hosyu0クラスを、下のように書き直して、実行してみてください。
+
+```java
+import java.util.Scanner;
+
+public class Hosyu {
+    
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
         System.out.println("足し算したい値を入力してください。");
         System.out.print("1つ目：");
         int a = input.nextInt();
         System.out.print("2つ目：");
         int b = input.nextInt();
-    }
-}
-```
-
-> CalcAddの足し算をするメソッド
-
-```
-public class CalcAdd {
-    private int a;
-    private int b;
-    public CalcAdd(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-    public int add(){
-        return a+b;
-    }
-}
-```
-
-> CalacAddクラスに渡して、戻り値で、結果を取得し表示しなさい。
-
-Mainクラスで、CalcAddクラスをインスタンス化し、入力した値を渡します。
-そして、CalcAddクラスの足し算メソッドを呼び出します。戻り値で結果が帰ってくるので、その値を入れる変数を用意します。
-最後に、その値を表示します。
-
-```
-public class Main {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("足し算したい値を入力してください。");
-        System.out.print("1つ目：");
-        int a = input.nextInt();
-        System.out.print("2つ目：");
-        int b = input.nextInt();
-        CalcAdd calcadd = new CalcAdd(a,b);
-        int sum = CalcAdd.add();
+        
+        Tashizan tashizan0 = new Tashizan(a,b);
+        int sum = tashizan0.tasu();
         System.out.println("合計は" + sum + "です。");
+
     }
 }
 ```
 
-以上で、おしまいです。
+```
+足し算したい値を入力してください。
+1つ目：8
+2つ目：6
+合計は14です。
+```
+
+以上で、練習はおしまいです。ここまでのやり方と同じように、問1から問3までクラスを作ってみましょう。
 
 ## 問1
 
