@@ -3,10 +3,10 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2022-12-13T00:48:26+09:00",
+  "updated": "2022-12-13T12:24:09+09:00",
   "id": "WorkSheet",
   "duration": 0,
-  "title": "Javaプログラミング",
+  "title": "ベーシッククラスレベル向け）Javaプログラミング補習教材",
   "summary": "WorkSheet",
   "source": "WorkSheet.md",
   "theme": "",
@@ -15,10 +15,12 @@
   ],
   "category": [
     "codelab",
-    "markdown"
+    "markdown",
+    "java"
   ],
   "tags": [
     "web"
   ],
+  "feedback": "mailto:java-prog-qa@techitose.org",
   "url": "WorkSheet"
 }
