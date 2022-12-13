@@ -401,6 +401,60 @@ public class Hosyu {
 
 </aside>
 
+指示通りにプログラムを作成し、下記の実行結果になることを確認しなさい。
+
+```
+掛け算したい値を入力してください。
+1つ目：2
+2つ目：3
+掛け算の結果は6です。
+```
+
+## 問1解答
+
+問1の解答です。
+自身のプログラムと比較してみてください。
+
+```java
+import java.util.Scanner;
+
+public class Hosyu {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("掛け算したい値を入力してください。");
+        System.out.print("1つ目：");
+        int a = input.nextInt();
+        System.out.print("2つ目：");
+        int b = input.nextInt();
+
+        Kakezan kakezan = new Kakezan(a,b);
+        int sum = kakezan.kakeru();
+        System.out.println("掛け算の結果は" + sum + "です。");
+
+    }
+}
+```
+
+```java
+public class Kakezan {
+
+    private int a;
+    private int b;
+
+    public Kakezan(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    public int kakeru() {
+        int ans = a * b;
+        return ans;
+    }
+}
+```
+
+
 ## 問2
 
 
