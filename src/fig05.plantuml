@@ -1,0 +1,21 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam classFontSize 24
+skinparam classFontName BIZ-UDPGothic-B
+skinparam classAttributeFontSize 24
+skinparam classAttributeFontName BIZ-UDPGothic-B
+skinparam shadowing false
+hide circle
+
+
+class Tashizan {
+ - a : int
+ - b : int
+ __
+ + Tashizan(a : int, b : int)
+ + tasu() : int
+ }
+
+
+@enduml
