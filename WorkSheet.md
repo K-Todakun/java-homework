@@ -416,6 +416,23 @@ public class Hosyu {
 自身のプログラムと比較してみてください。
 
 ```java
+public class Kakezan {
+
+    private int a;
+    private int b;
+
+    public Kakezan(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    public int kakeru() {
+        int ans = a * b;
+        return ans;
+    }
+}
+```
+
+```java
 import java.util.Scanner;
 
 public class Hosyu {
@@ -437,23 +454,98 @@ public class Hosyu {
 }
 ```
 
-```java
-public class Kakezan {
 
+## 練習：クラス図を作る・読み取る
+
+クラス図を用いると、**プログラムそのものよりも視覚的にわかりやすい形でクラス構造を確認したり、表す**ことができます。
+
+### クラス図の基本
+
+クラス図は、四角形を用いて、下のように書きます。
+
+![fig03](./fig03.png)
+
+例えば、練習で作成した足し算クラスをクラス図で表すと、以下のようになります。
+
+クラス図とプログラムの対応を見比べてみましょう。
+
+![fig04](./fig04.png)
+
+```java
+public class Tashizan {
+    
     private int a;
     private int b;
 
-    public Kakezan(int a, int b) {
+    public Tashizan(int a, int b) {
         this.a = a;
         this.b = b;
     }
-    public int kakeru() {
-        int ans = a * b;
+
+　　public int tasu() {
+        int ans = a + b;
         return ans;
     }
+
 }
 ```
 
+<aside class="negative">
+
+型と変数名、戻り値の型とメソッド名の順番を逆に書くことに注意しましょう。
+
+また、クラス図はメソッドやコンスラクタの詳細な処理は記述しません。
+
+</aside>
+
+
+### カプセル化とクラス図
+
+クラス図にはさらに、 `public` `private` などの、クラス外部からの利用の可・不可（ **カプセル化** ）を行うための修飾子も表すことができます。
+
+主に、 `+`　が `public` （クラスの外側から利用可）、`-` が `private` （クラスの内部からのみアクセス可）を記述します。
+
+これを足し算クラスのクラス図に反映すると、以下のようになります。
+
+クラス図とプログラムの対応を見比べてみましょう。
+
+![fig05](./fig05.png)
+
+```java
+public class Tashizan {
+    
+    private int a;
+    private int b;
+
+    public Tashizan(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+　　public int tasu() {
+        int ans = a + b;
+        return ans;
+    }
+
+}
+```
+
+<aside class="negative">
+
+クラスの外部から利用できる `public` な Tashizan コンストラクタや tasu() メソッドには `+` 、クラスの内部からのみ利用できる `private` なフィールド `a`, `b` には `-` がつけれていることに着目しましょう。
+
+</aside>
+
+
+### ここまでのまとめ
+
+<aside>
+
+**クラスを作る前にクラス図を書くことによって、どのようなフィールドが必要か、どんな引数・戻り値を備えたメソッドが必要か、またその外部からの利用可否の情報を整理する** ことができます。
+
+問題文を読んだ後にどのようなフィールド・メソッドを用意すれば良いか自分にとってわかりづらい場合は、先にクラス図を書いて、必要なデータ（フィールド）や機能（メソッド）をクラスの中にどのように用意するか、また用意したもので過不足が無いかを確認すると、クラスを作成する上での混乱や抜けを防ぐことができます。
+
+</aside>
 
 ## 問2
 
@@ -473,7 +565,7 @@ BMI = 体重（kg）÷ 身長（m）^2
 </aside>
 
 
-![BMIのクラス図](WorkSheet/img/BMI.png) 
+![BMIのクラス図](./BMI.png) 
 
 実行結果
 175cm , 70kgで実行した場合
@@ -493,7 +585,7 @@ BMI = 体重（kg）÷ 身長（m）^2
 
 </aside>
 
-![Squareのクラス図](WorkSheet/img/Square.png) 
+![Squareのクラス図](./Square.png) 
 
 実行結果
 縦の長さが5,横の長さが4の場合
