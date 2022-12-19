@@ -218,7 +218,7 @@
 </code></pre>
 <p><code>tashizan0</code> 変数が、<strong>インスタンス化した（使えるようにメモリを確保した）あるTashizanクラスのインスタンス</strong> を参照できるようになりました。</p>
 <p>コンストラクタに <code>a=2</code>, <code>b=3</code> となるように 引数を渡しているので、コンストラクタの処理が実行されることで <strong>Tashizanインスタンスのフィールド変数 </strong><code>a</code>, <code>b</code> <strong>もそれぞれ </strong><code>2</code> , <code>3</code> <strong>になっています</strong>。</p>
-<p class="image-container"><img alt="fig01" src="img/3b6e134198eea1ba.png"></p>
+<p class="image-container"><img alt="fig01" src="img\\3b6e134198eea1ba.png"></p>
 <h2 is-upgraded>Tashizanインスタンスの計算テスト</h2>
 <p>tashizan0 変数から参照された Tashizanインスタンスに、足し算を行わせましょう。</p>
 <pre><code language="language-java" class="language-java">public class Hosyu {
@@ -236,7 +236,7 @@
 <p>プログラムを実行し、実行した結果が標準出力に表示されることを確認しましょう。</p>
 <pre><code>5
 </code></pre>
-<p class="image-container"><img alt="fig02" src="img/cc7ad753430758a4.png"></p>
+<p class="image-container"><img alt="fig02" src="img\\cc7ad753430758a4.png"></p>
 <h2 is-upgraded>キーボードから入力できるようにする</h2>
 <p>ここまでの内容を踏まえて、標準入力（キーボード）から数値を入力し計算できるようにしましょう。</p>
 <p>Hosyu0クラスを、下のように書き直して、実行してみてください。</p>
@@ -331,10 +331,10 @@ public class Hosyu {
         <p>クラス図を用いると、<strong>プログラムそのものよりも視覚的にわかりやすい形でクラス構造を確認したり、表す</strong>ことができます。</p>
 <h2 is-upgraded>クラス図の基本</h2>
 <p>クラス図は、四角形を用いて、下のように書きます。</p>
-<p class="image-container"><img alt="fig03" src="img/ddfab2853f4bd5e1.png"></p>
+<p class="image-container"><img alt="fig03" src="img\\ddfab2853f4bd5e1.png"></p>
 <p>例えば、練習で作成した足し算クラスをクラス図で表すと、以下のようになります。</p>
 <p>クラス図とプログラムの対応を見比べてみましょう。</p>
-<p class="image-container"><img alt="fig04" src="img/61e1bed5a5533018.png"></p>
+<p class="image-container"><img alt="fig04" src="img\\61e1bed5a5533018.png"></p>
 <pre><code language="language-java" class="language-java">public class Tashizan {
     
     private int a;
@@ -360,7 +360,7 @@ public class Hosyu {
 <p>主に、 <code>+</code>　が <code>public</code> （クラスの外側から利用可）、<code>-</code> が <code>private</code> （クラスの内部からのみアクセス可）を記述します。</p>
 <p>これを足し算クラスのクラス図に反映すると、以下のようになります。</p>
 <p>クラス図とプログラムの対応を見比べてみましょう。</p>
-<p class="image-container"><img alt="fig05" src="img/f8cc4ce07f7722b8.png"></p>
+<p class="image-container"><img alt="fig05" src="img\\f8cc4ce07f7722b8.png"></p>
 <pre><code language="language-java" class="language-java">public class Tashizan {
     
     private int a;
@@ -395,7 +395,7 @@ public class Hosyu {
 <p>最後に、Mainクラスで、標準入力から2つの数値を入力し、BMIクラスで計算が実行されるようにしなさい。</p>
 <p>BMIの計算方法は次の通りです。 BMI = 体重（kg）÷ 身長（m）^2</p>
 </aside>
-<p class="image-container"><img alt="BMIのクラス図" src="img/3607af050f65f433.png"></p>
+<p class="image-container"><img alt="BMIのクラス図" src="img\\3607af050f65f433.png"></p>
 <p>実行結果 175cm , 70kgで実行した場合</p>
 <pre><code>あなたのBMIは22.857143です。
 </code></pre>
@@ -408,7 +408,7 @@ public class Hosyu {
 <p>四角形クラスのデータは、インスタンス化時に初期化する。</p>
 <p>最後に、Mainクラスで、標準入力から2つの数値（縦と横）を入力し、四角形クラスで計算が実行されるようにしなさい。</p>
 </aside>
-<p class="image-container"><img alt="Squareのクラス図" src="img/2572d2aee2488a12.png"></p>
+<p class="image-container"><img alt="Squareのクラス図" src="img\\2572d2aee2488a12.png"></p>
 <p>実行結果 縦の長さが5,横の長さが4の場合</p>
 <pre><code>縦：5
 横：4
